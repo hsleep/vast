@@ -147,7 +147,7 @@ type Creative struct {
 	// The preferred order in which multiple Creatives should be displayed
 	Sequence int `xml:"sequence,attr,omitempty"`
 	// Identifies the ad with which the creative is served
-	AdID string `xml:"AdID,attr,omitempty"`
+	AdID string `xml:"adId,attr,omitempty"`
 	// The technology used for any included API
 	APIFramework string `xml:"apiFramework,attr,omitempty"`
 	// If present, defines a linear creative
@@ -193,7 +193,7 @@ type CreativeWrapper struct {
 	// The preferred order in which multiple Creatives should be displayed
 	Sequence int `xml:"sequence,attr,omitempty"`
 	// Identifies the ad with which the creative is served
-	AdID string `xml:"AdID,attr,omitempty"`
+	AdID string `xml:"adId,attr,omitempty"`
 	// If present, defines a linear creative
 	Linear *LinearWrapper `xml:",omitempty"`
 	// If defined, defines companions creatives

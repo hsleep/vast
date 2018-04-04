@@ -586,7 +586,7 @@ func TestIcons(t *testing.T) {
 			assert.Equal(t, "Adap.tv", inline.AdSystem.Name)
 			assert.Equal(t, "1.0", inline.AdSystem.Version)
 			assert.Equal(t, "Adap.tv Ad Unit", inline.AdTitle.CDATA)
-			assert.Equal(t, "", inline.Description.CDATA)
+			assert.Nil(t, inline.Description)
 
 			if assert.Len(t, inline.Creatives, 1) {
 				crea1 := inline.Creatives[0]

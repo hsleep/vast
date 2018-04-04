@@ -44,7 +44,7 @@ type CDATAString struct {
 // URIs necessary to display the ad.
 type InLine struct {
 	// The name of the ad server that returned the ad
-	AdSystem *AdSystem
+	AdSystem AdSystem
 	// The common name of the ad
 	AdTitle CDATAString
 	// One or more URIs that directs the video player to a tracking resource file that the
@@ -53,7 +53,7 @@ type InLine struct {
 	// The container for one or more <Creative> elements
 	Creatives []Creative `xml:"Creatives>Creative"`
 	// A string value that provides a longer description of the ad.
-	Description CDATAString `xml:",omitempty"`
+	Description *CDATAString `xml:",omitempty"`
 	// The name of the advertiser as defined by the ad serving party.
 	// This element can be used to prevent displaying ads with advertiser
 	// competitors. Ad serving parties and publishers should identify how
@@ -66,14 +66,14 @@ type InLine struct {
 	// For example, the attribute might be set to type=”text/javascript”.
 	// Surveys can be dynamically inserted into the VAST response as long as
 	// cross-domain issues are avoided.
-	Survey CDATAString `xml:",omitempty"`
+	Survey *CDATAString `xml:",omitempty"`
 	// A URI representing an error-tracking pixel; this element can occur multiple
 	// times.
 	Errors []CDATAString `xml:"Error,omitempty"`
 	// Provides a value that represents a price that can be used by real-time bidding
 	// (RTB) systems. VAST is not designed to handle RTB since other methods exist,
 	// but this element is offered for custom solutions if needed.
-	Pricing Pricing `xml:",omitempty"`
+	Pricing *Pricing `xml:",omitempty"`
 	// XML node for custom extensions, as defined by the ad server. When used, a
 	// custom element should be nested under <Extensions> to help separate custom
 	// XML elements from VAST elements. The following example includes a custom

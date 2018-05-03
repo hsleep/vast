@@ -140,6 +140,13 @@ type AdSystem struct {
 	Name    string `xml:",cdata"`
 }
 
+// UniversalAdId contains the unique creative identifier.
+type UniversalAdId struct {
+	IdRegistry string `xml:"idRegistry,attr"`
+	IdValue    string `xml:"idValue,attr"`
+	Id         string `xml:",cdata"`
+}
+
 // Creative is a file that is part of a VAST ad.
 type Creative struct {
 	// An ad server-defined identifier for the creative
@@ -150,6 +157,8 @@ type Creative struct {
 	AdID string `xml:"adId,attr,omitempty"`
 	// The technology used for any included API
 	APIFramework string `xml:"apiFramework,attr,omitempty"`
+	// The unique creative identifier.
+	UniversalAdId UniversalAdId
 	// If present, defines a linear creative
 	Linear *Linear `xml:",omitempty"`
 	// If defined, defins companions creatives

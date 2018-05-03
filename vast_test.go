@@ -31,6 +31,13 @@ func loadFixture(path string) (*VAST, string, string, error) {
 	return &v, string(b), string(res), err
 }
 
+func TestUniversalAdId(t *testing.T) {
+	uai := UniversalAdId{IdValue: "ad-id", Id: "ad-id"}
+	b, err := xml.Marshal(uai)
+	assert.Nil(t, err)
+	assert.Equal(t, `<UniversalAdId idRegistry="" idValue="ad-id"><![CDATA[ad-id]]></UniversalAdId>`, string(b))
+}
+
 func TestCreativeExtensions(t *testing.T) {
 	v, _, _, err := loadFixture("testdata/creative_extensions.xml")
 	if !assert.NoError(t, err) {

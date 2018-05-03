@@ -7,6 +7,8 @@ import "encoding/xml"
 type VAST struct {
 	// The version of the VAST spec (should be either "2.0" or "3.0")
 	Version string `xml:"version,attr"`
+	// XML Namespace
+	XmlNs string `xml:"xmlns,attr,omitempty"`
 	// One or more Ad elements. Advertisers and video content publishers may
 	// associate an <Ad> element with a line item video ad defined in contract
 	// documentation, usually an insertion order. These line item ads typically
